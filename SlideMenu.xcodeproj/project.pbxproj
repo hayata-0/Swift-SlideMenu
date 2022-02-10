@@ -13,6 +13,7 @@
 		0CDF38AB27B56EC4007DC904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDF38AA27B56EC4007DC904 /* Assets.xcassets */; };
 		0CDF38AE27B56EC4007DC904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CDF38AC27B56EC4007DC904 /* LaunchScreen.storyboard */; };
 		0CDF38B727B57406007DC904 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDF38B627B57406007DC904 /* MenuViewController.swift */; };
+		0CDF38B927B574BA007DC904 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDF38B827B574BA007DC904 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0CDF38AD27B56EC4007DC904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CDF38AF27B56EC4007DC904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CDF38B627B57406007DC904 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0CDF38B827B574BA007DC904 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				0CDF38A527B56EBF007DC904 /* ContainerViewController.swift */,
 				0CDF38B627B57406007DC904 /* MenuViewController.swift */,
+				0CDF38B827B574BA007DC904 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDF38B927B574BA007DC904 /* HomeViewController.swift in Sources */,
 				0CDF38A627B56EBF007DC904 /* ContainerViewController.swift in Sources */,
 				0CDF38A227B56EBF007DC904 /* AppDelegate.swift in Sources */,
 				0CDF38A427B56EBF007DC904 /* SceneDelegate.swift in Sources */,
