@@ -11,7 +11,8 @@ class ContainerViewController: UIViewController {
     
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
-
+    var navVC: UINavigationController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -30,6 +31,7 @@ class ContainerViewController: UIViewController {
         addChild(navVC)
         view.addSubview(navVC.view)
         navVC.didMove(toParent: self)
+        self.navVC = navVC
     }
 
 }
@@ -40,16 +42,22 @@ extension ContainerViewController: HomeViewControllerDelegate{
             case .closed:
                 //開く処理
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                    self.homeVC.view.frame.origin.x = self.homeVC.view.frame.size.width - 100
-                } completion: { done in
+                    self.navVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - 100
+                } completion: {[weak self] done in
                     if done{
-                        
+                        self?.menuState = .opened
                     }
                 }
 
             case .opened:
                 //閉じる処理
-                break
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
+                    self.navVC?.view.frame.origin.x = 0
+                } completion: {[weak self] done in
+                    if done{
+                        self?.menuState = .closed
+                    }
+                }
         }
     }
 }
