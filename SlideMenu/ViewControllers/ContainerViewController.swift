@@ -21,6 +21,7 @@ class ContainerViewController: UIViewController {
 
     private func addChildVCs() {
         //MENU
+        menuVC.delegate = self
         //子要素に追加
         addChild(menuVC)
         view.addSubview(menuVC.view)
@@ -38,6 +39,10 @@ class ContainerViewController: UIViewController {
 
 extension ContainerViewController: HomeViewControllerDelegate{
     func didTapMenuButton() {
+        toggleMenu(completion: nil)
+    }
+    
+    func toggleMenu(completion: (() -> Void)?){
         switch menuState {
             case .closed:
                 //開く処理
@@ -46,6 +51,9 @@ extension ContainerViewController: HomeViewControllerDelegate{
                 } completion: {[weak self] done in
                     if done{
                         self?.menuState = .opened
+                        DispatchQueue.main.async {
+                            completion?()
+                        }
                     }
                 }
 
@@ -58,6 +66,25 @@ extension ContainerViewController: HomeViewControllerDelegate{
                         self?.menuState = .closed
                     }
                 }
+        }
+    }
+}
+
+extension ContainerViewController:MenuViewControllerDelegate {
+    func didSelect(menuItem: MenuViewController.MenuOptions) {
+        toggleMenu {[weak self] in 
+            switch menuItem {
+                case .home:
+                    break
+                case .info:
+                    break
+                case .appRating:
+                    break
+                case .shareApp:
+                    break
+                case .settings:
+                    break
+            }
         }
     }
 }
